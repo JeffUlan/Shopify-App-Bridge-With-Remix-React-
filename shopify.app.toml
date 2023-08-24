@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "strategy-app-test"
+client_id = "083bea86f9320b6a5a1601bd640d89a4"
+application_url = "https://stud-cow-bonus-caring.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://stud-cow-bonus-caring.trycloudflare.com/auth/callback",
+  "https://stud-cow-bonus-caring.trycloudflare.com/auth/shopify/callback",
+  "https://stud-cow-bonus-caring.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "aubynj.myshopify.com"

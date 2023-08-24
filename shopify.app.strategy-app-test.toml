@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "strategy-app-test"
+client_id = "049e61e9312eee1bcf731a06037880ea"
+application_url = "https://robots-highways-brooks-bon.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://robots-highways-brooks-bon.trycloudflare.com/auth/callback",
+  "https://robots-highways-brooks-bon.trycloudflare.com/auth/shopify/callback",
+  "https://robots-highways-brooks-bon.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "aubynj.myshopify.com"
