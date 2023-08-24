@@ -99,7 +99,7 @@ export default function Index() {
 
   return (
     <Page>
-      <ui-title-bar title="Remix app template">
+      <ui-title-bar title="Strategy App Test">
         {/* <button variant="primary" onClick={generateProduct}>
           Generate a product
         </button> */}
@@ -141,8 +141,7 @@ export default function Index() {
                     Get started with products
                   </Text>
                   <Text as="p" variant="bodyMd">
-                    Generate a product with GraphQL and get the JSON output for
-                    that product. Learn more about the{" "}
+                    On the Product page, generate a list of products with Shopify Graphql. Learn more about the{" "}
                     <Link
                       url="https://shopify.dev/docs/api/admin-graphql/latest/mutations/productCreate"
                       target="_blank"

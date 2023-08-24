@@ -34,23 +34,23 @@ export const loader = async ({ request }) => {
 
 export async function action ({ request }) {
     const { admin } = await authenticate.admin(request)
-    await createProducts(admin) // Create 5 products
+    // await createProducts(admin) // Create 5 products
     
     return null;
 }
 
 
-export default function Products () {
+export default function Orders () {
     const rows = []
     const submit = useSubmit()
     // const { products } = useLoaderData()
-    const generateProduct = () => submit({}, { replace: true, method: "POST" })
+    const createOrder = () => submit({}, { replace: true, method: "POST" })
 
     return (
         <Page>
-            <ui-title-bar title="Product Section">
-                <button variant="primary" onClick={generateProduct}>
-                    Generate a product
+            <ui-title-bar title="Orders">
+                <button variant="primary" onClick={createOrder}>
+                    Create an order
                 </button>
             </ui-title-bar>
             <LegacyCard>
