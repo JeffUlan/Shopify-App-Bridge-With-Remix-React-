@@ -1,4 +1,3 @@
-export const DEFAULT_PRODUCTS_COUNT = 5
 
 export const CREATE_PRODUCT_MUTATIONS = `#graphql
     mutation populateProduct($input: ProductInput!) {
@@ -22,17 +21,5 @@ export const CREATE_PRODUCT_MUTATIONS = `#graphql
     }
 }`
 
-export const QUERY_PRODUCT_MUTATIONS = `
-    {
-        products (first: 20) {
-            nodes {
-                id,
-                title,
-                description,
-                createdAt
-            }
-        }
-    }`
-
-
+export const CREATE_ORDER_MUTATIONS = ``
 

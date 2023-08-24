@@ -1,8 +1,13 @@
 import { 
+    CREATE_ORDER_MUTATIONS,
     CREATE_PRODUCT_MUTATIONS, 
+} from './../constants/mutations';
+
+import {
     DEFAULT_PRODUCTS_COUNT, 
-    QUERY_PRODUCT_MUTATIONS 
-} from '../constants/mutations';
+    QUERY_ORDER, 
+    QUERY_PRODUCT 
+} from './../constants/query';
 
 import { 
     randomTitle
@@ -24,6 +29,23 @@ export const createProducts = async (admin) => {
     return null
 }
 
-export const getAllProducts = async (admin) => {
-    return await admin.graphql(QUERY_PRODUCT_MUTATIONS)
+export const getPartialProducts = async (admin) => {
+    return await admin.graphql(QUERY_PRODUCT)
+}
+
+export const createOrder = async (admin, ...params) => {
+    return await admin.graphql(CREATE_ORDER_MUTATIONS,
+        {
+          variables: {
+            input: {
+              title: randomTitle(),
+              variants: [{ price: Math.random() * 100 }],
+            },
+          },
+        }
+    );
+}
+
+export const getPartialOrders = async (admin) => {
+    return await admin.graphql(QUERY_ORDER)
 }

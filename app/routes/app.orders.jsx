@@ -14,15 +14,15 @@ import {
     // Link,
 } from "@shopify/polaris"
 
-import { authenticate } from './../shopify.server'
-import { createProducts, getAllProducts } from './helper'
+import { authenticate } from '../shopify.server'
+import { createOrder, getPartialOrders } from './helper'
 import { json } from "@remix-run/node"
 import { useLoaderData, useSubmit } from "@remix-run/react"
 
 export const loader = async ({ request }) => {
     // We'll fetch all products with Graphql
     const { admin } = await authenticate.admin(request)
-    const response = await getAllProducts(admin) // Fetch all products after creating
+    const response = await getPartialOrders(admin) // Fetch all products after creating
     const {
         data: {
             products: { nodes },
