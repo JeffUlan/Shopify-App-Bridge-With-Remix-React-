@@ -132,6 +132,36 @@ const NOUNS = [
     "star",
 ];
 
+export const FAKE_SUBSCRIPTION = [
+    {
+        subscription_name : 'BASIC',
+        amount : 45,
+        features: ["up to 1000 orders/month", "up 1000 products"],
+        productCount : 1000,
+        orderCount : 1000
+    },
+    {
+        subscription_name : 'GROWTH',
+        amount : 79,
+        features: ["up to 3000 orders/month", "up 3000 products"],
+        productCount : 3000,
+        orderCount : 3000
+    },
+    {
+        subscription_name : 'PRO',
+        amount : 99,
+        features: ["up to 6000 orders/month", "up 6000 products"],
+        productCount : 6000,
+        orderCount : 6000
+    },
+    {
+        subscription_name : 'ENTERPRISE',
+        amount : 120,
+        features: ["up to 11000 orders/month", "up 20000 products"],
+        productCount : 11000,
+        orderCount : 20000
+    }
+]
 
 export const randomTitle = () => {
     const adjective = ADJECTIVES[Math.floor(Math.random() * ADJECTIVES.length)];
