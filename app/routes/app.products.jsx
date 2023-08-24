@@ -15,7 +15,7 @@ import {
 } from "@shopify/polaris"
 
 import { authenticate } from './../shopify.server'
-import { createProducts } from './helper'
+import { createProducts, getAllProducts } from './helper'
 import { json } from "@remix-run/node"
 import { useLoaderData, useSubmit } from "@remix-run/react"
 
@@ -29,12 +29,16 @@ export const loader = async ({ request }) => {
 
 export async function action ({ request }) {
     const { admin } = await authenticate.admin(request)
-    await createProducts(admin)
+    await createProducts(admin) // Create 5 products
 
-    // return json({
-    //     product: response.data,
-    // });
-    return null
+    const response = await getAllProducts(admin) // Fetch all products after creating
+    const {
+        data: {
+            products: { nodes },
+        },
+    } = await response.json();
+    
+    return json(nodes);
 }
 
 
