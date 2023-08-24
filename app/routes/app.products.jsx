@@ -21,16 +21,7 @@ import { useLoaderData, useSubmit } from "@remix-run/react"
 
 export const loader = async ({ request }) => {
     // We'll fetch all products with Graphql
-
-    return json({
-        products : []
-    })
-}
-
-export async function action ({ request }) {
     const { admin } = await authenticate.admin(request)
-    await createProducts(admin) // Create 5 products
-
     const response = await getAllProducts(admin) // Fetch all products after creating
     const {
         data: {
@@ -39,6 +30,13 @@ export async function action ({ request }) {
     } = await response.json();
     
     return json(nodes);
+}
+
+export async function action ({ request }) {
+    const { admin } = await authenticate.admin(request)
+    await createProducts(admin) // Create 5 products
+    
+    return null;
 }
 
 
