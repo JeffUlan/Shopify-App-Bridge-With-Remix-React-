@@ -132,6 +132,17 @@ const NOUNS = [
     "star",
 ];
 
+export const BillingInterval = {
+    OneTime: "ONE_TIME",
+    Every30Days: "EVERY_30_DAYS",
+    Annual: "ANNUAL",
+};
+
+export const RECURRING_INTERVALS = [
+    BillingInterval.Every30Days,
+    BillingInterval.Annual,
+];
+
 export const FAKE_SUBSCRIPTION = [
     {
         subscription_name : 'BASIC',
