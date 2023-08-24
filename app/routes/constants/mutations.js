@@ -4,30 +4,32 @@ export const CREATE_PRODUCT_MUTATIONS = `#graphql
     mutation populateProduct($input: ProductInput!) {
     productCreate(input: $input) {
         product {
-        id
-        title
-        handle
-        status
-        variants(first: 10) {
-            edges {
-            node {
-                id
-                price
-                barcode
-                createdAt
+            id
+            title
+            handle
+            status
+            variants(first: 10) {
+                edges {
+                    node {
+                        id
+                        price
+                        barcode
+                        createdAt
+                    }
+                }
             }
-            }
-        }
         }
     }
 }`
 
 export const QUERY_PRODUCT_MUTATIONS = `
     {
-        products() {
+        products (first: 20) {
             nodes {
-                title
-                description
+                id,
+                title,
+                description,
+                createdAt
             }
         }
     }`
